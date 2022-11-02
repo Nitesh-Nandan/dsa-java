@@ -13,22 +13,6 @@ public class MaxFruitsInBasket {
     }
 
     static int maxFruit(char[] fruits, int basket) {
-        int ans = 0;
-        int si = 0;
-        Map<Character, Integer> fruitMap = new HashMap<>();
-        for (int i = 0; i < fruits.length; i++) {
-            fruitMap.put(fruits[i], fruitMap.getOrDefault(fruits[i], 0) + 1);
-
-            while (fruitMap.size() > basket) {
-                char prevFruit = fruits[si];
-                fruitMap.put(prevFruit, fruitMap.get(prevFruit) - 1);
-                if (fruitMap.get(prevFruit) == 0) {
-                    fruitMap.remove(prevFruit);
-                }
-                si++;
-            }
-            ans = Math.max(ans, i - si + 1);
-        }
-        return ans;
+       return -1;
     }
 }

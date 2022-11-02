@@ -11,17 +11,6 @@ public class SmallestSubArrayWithGreaterOrEqualK {
     }
 
     static int getSmallestSubArrayLen(int[] arr, int k) {
-        int si = 0;
-        int ksum = 0;
-        int ans = Integer.MAX_VALUE;
-
-        for (int i = 0; i < arr.length; i++) {
-            ksum += arr[i];
-            while (ksum >= k) {
-                ans = Math.min(ans, (i - si + 1));
-                ksum -= arr[si++];
-            }
-        }
-        return ans;
+       return -1;
     }
 }

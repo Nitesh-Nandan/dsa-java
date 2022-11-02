@@ -20,20 +20,6 @@ public class LongestSubArrayWithOnesAfterReplacement {
     }
 
     static int findMaxSubArrayLen(int[] arr, int k) {
-        int onesCount = 0, si = 0, ans = 0;
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 1) {
-                onesCount++;
-            }
-            if (i - si + 1 - onesCount > k) {
-                if (arr[si] == 1) {
-                    onesCount--;
-                }
-                si++;
-            }
-            ans = Math.max(ans, i - si + 1);
-        }
-        return ans;
+       return -1;
     }
 }
