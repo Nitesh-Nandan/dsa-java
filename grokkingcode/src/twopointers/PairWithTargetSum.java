@@ -1,6 +1,7 @@
 package twopointers;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PairWithTargetSum {
@@ -10,22 +11,6 @@ public class PairWithTargetSum {
     }
 
     static List<Integer> getPairIndex(int[] arr, int target) {
-        int first = 0;
-        int last = arr.length - 1;
-
-        List<Integer> ans = new ArrayList<>();
-
-        while (first < last) {
-            if (arr[first] + arr[last] == target) {
-                ans.add(first);
-                ans.add(last);
-                return ans;
-            } else if (arr[first] + arr[last] > target) {
-                last--;
-            } else {
-                first++;
-            }
-        }
-        return ans;
+      return Collections.emptyList();
     }
 }

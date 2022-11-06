@@ -9,23 +9,6 @@ public class TripletSmallerSum {
     }
 
     static int getTripletCount(int[] arr, int tar) {
-        int count = 0;
-        Arrays.sort(arr);
-
-        for (int i = 0; i < arr.length - 2; i++) {
-            int left = i + 1;
-            int right = arr.length - 1;
-
-            while (left < right) {
-                int tsum = arr[i] + arr[left] + arr[right];
-                if (tsum < tar) {
-                    count += (right - left);
-                    left++;
-                } else {
-                    right--;
-                }
-            }
-        }
-        return count;
+       return 0;
     }
 }

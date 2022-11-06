@@ -13,27 +13,6 @@ public class ProductLessThanATarget {
 
     static List<List<Integer>> getSubArray(int[] arr, int tar) {
         List<List<Integer>> ans = new ArrayList<>();
-        int left = 0;
-        int product = 1;
-
-        for (int i = 0; i < arr.length; i++) {
-            product = product * arr[i];
-            while (product >= tar && left < i) {
-                product /= arr[left++];
-            }
-
-            List<Integer> tans = new ArrayList<>();
-            for (int j = i; j >= left; j--) {
-                tans.add(0, arr[j]);
-                ans.add(new ArrayList<>(tans));
-            }
-
-//            for (int j = left; j <= i; j++) {
-//                tans.add(0, arr[j]);
-//                ans.add(new ArrayList<>(tans));
-//            }
-        }
-
         return ans;
     }
 }

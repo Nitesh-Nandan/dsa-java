@@ -9,22 +9,6 @@ public class SquaringSortedArray {
 
     static int[] squareSortedArray(int[] array) {
         int[] ans = new int[array.length];
-
-        int left = 0, right = array.length - 1;
-        int hi = array.length - 1;
-
-        while (left < right) {
-            int lval = array[left] * array[left];
-            int rval = array[right] * array[right];
-            if (lval > rval) {
-                ans[hi--] = lval;
-                left++;
-            } else {
-                ans[hi--] = rval;
-                right--;
-            }
-        }
-
         return ans;
     }
 

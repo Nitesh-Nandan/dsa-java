@@ -25,32 +25,6 @@ public class WordConcatenationProblem4 {
     static List<Integer> getIndexes(String str, String[] words) {
         List<Integer> ans = new ArrayList<>();
 
-        Map<String, Integer> wordMap = new HashMap<>();
-        for (String word : words) {
-            wordMap.put(word, wordMap.getOrDefault(word, 0) + 1);
-        }
-
-        int wordLen = words[0].length();
-        int wordCount = words.length;
-
-        for (int i = 0; i <= str.length() - (wordCount * wordLen); i++) {
-            Map<String, Integer> tmpMap = new HashMap<>();
-
-            for (int j = 0; j < wordCount; j++) {
-                int nextWordIndex = i + (j * wordLen);
-                String nextWord = str.substring(nextWordIndex, nextWordIndex + wordLen);
-                if (!wordMap.containsKey(nextWord)) {
-                    break;
-                }
-                tmpMap.put(nextWord, tmpMap.getOrDefault(nextWord, 0) + 1);
-                if (tmpMap.get(nextWord) > wordMap.getOrDefault(nextWord, 0)) {
-                    break;
-                }
-                if (j + 1 == wordCount) {
-                    ans.add(i);
-                }
-            }
-        }
         return ans;
     }
 }
