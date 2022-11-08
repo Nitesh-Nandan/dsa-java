@@ -1,4 +1,4 @@
-package MergeInterval;
+package mergeInterval;
 
 import java.util.Arrays;
 

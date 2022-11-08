@@ -1,4 +1,4 @@
-package MergeInterval;
+package mergeInterval;
 
 public class Intervals {
     int start;
