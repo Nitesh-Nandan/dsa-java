@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Vector;
 
-public class FindKSmallestMisingPositiveNumber {
+public class FindKSmallestMissingPositiveNumber {
 
     static List<Integer> firstKSmallestMissingPositiveNumber(int[] arr, int k) {
         int itr = 0;
-        List<Integer> ans = new ArrayList<>();
         while (itr < arr.length) {
             if (arr[itr] > 0 && arr[itr] <= arr.length && arr[itr] != arr[arr[itr] - 1]) {
                 CyclicUtil.swap(arr, itr, arr[itr] - 1);
@@ -18,6 +18,7 @@ public class FindKSmallestMisingPositiveNumber {
             }
         }
 
+        Vector
 
         List<Integer> missingNumbers = new ArrayList<>();
         Set<Integer> extraNumbers = new HashSet<>();
