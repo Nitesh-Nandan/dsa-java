@@ -2,22 +2,23 @@ package javads;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class ListAndArray {
 
     public static void main(String[] args) {
-//        playWithList();
+        playWithList();
 //        listToArray();
 //        arrayToList();
-        playingWithDoubleList();
+//        playingWithDoubleList();
     }
 
     static void playWithList() {
-        List<Integer> list = new ArrayList<>();
-        list.add(3, 10);
-        list.add(5, 20);
+        List<Integer> list = new LinkedList<>();
+        list.add(0, 10);
+//        list.add(5, 20);
 
         list.forEach(System.out::println);
     }
