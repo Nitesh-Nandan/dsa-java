@@ -10,11 +10,11 @@ import java.util.PriorityQueue;
 public class SmallestKNumber {
     private static int findKthSmallestNumber(List<Integer[]> lists, int k) {
         PriorityQueue<Pair<Integer>> queue = new PriorityQueue<>(
-                (a,b) -> Integer.compare(lists.get(a.first)[a.second], lists.get(b.first)[b.second]));
+                (a, b) -> Integer.compare(lists.get(a.first)[a.second], lists.get(b.first)[b.second]));
 
-        for(int i=0; i<lists.size(); i++) {
-            if(lists.get(i).length != 0) {
-               queue.offer(new Pair<>(i, 0));
+        for (int i = 0; i < lists.size(); i++) {
+            if (lists.get(i).length != 0) {
+                queue.offer(new Pair<>(i, 0));
             }
         }
 
@@ -25,8 +25,8 @@ public class SmallestKNumber {
             Pair<Integer> offset = queue.poll();
             ans = lists.get(offset.first)[offset.second];
 
-            if(offset.second < lists.get(offset.first).length-1) {
-                queue.offer(new Pair<>(offset.first, offset.second+1));
+            if (offset.second < lists.get(offset.first).length - 1) {
+                queue.offer(new Pair<>(offset.first, offset.second + 1));
             }
             visited++;
         }
@@ -98,7 +98,7 @@ public class SmallestKNumber {
         Integer[] l11111 = new Integer[]{5, 8, 9, 17};
         Integer[] l21111 = new Integer[]{};
         Integer[] l31111 = new Integer[]{21, 22, 23, 24};
-        List<Integer[]> lists4 = new ArrayList<Integer[]>();
+        List<Integer[]> lists4 = new ArrayList<>();
         lists4.add(l11111);
         lists4.add(l21111);
         lists4.add(l31111);
