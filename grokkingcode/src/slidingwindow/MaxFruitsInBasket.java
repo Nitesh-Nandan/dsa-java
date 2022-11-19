@@ -1,8 +1,5 @@
 package slidingwindow;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class MaxFruitsInBasket {
     public static void main(String[] args) {
         char[] fruits1 = {'A', 'B', 'C', 'A', 'C'}; //3

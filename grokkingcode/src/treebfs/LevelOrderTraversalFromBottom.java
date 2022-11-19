@@ -2,33 +2,11 @@ package treebfs;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class LevelOrderTraversalFromBottom {
 
     static List<List<Integer>> traverse(TreeNode root) {
         List<List<Integer>> ans = new LinkedList<>();
-        if(root == null) {
-            return ans;
-        }
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-
-        while (!queue.isEmpty()) {
-            int itr = queue.size();
-            List<Integer> level = new LinkedList<>();
-            while (itr-- > 0) {
-                TreeNode curr = queue.poll();
-                level.add(curr.val);
-                if(curr.left != null) {
-                    queue.offer(curr.left);
-                }
-                if(curr.right!=null) {
-                    queue.offer(curr.right);
-                }
-            }
-            ans.add(0, level);
-        }
         return ans;
     }
 

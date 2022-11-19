@@ -1,32 +1,13 @@
 package mergeInterval;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MergeIntervals {
 
     static List<Intervals> intervalsAfterMerge(List<Intervals> intervals) {
-        if (intervals.size() < 2) {
-            return intervals;
-        }
-        intervals.sort((a, b) -> Integer.compare(a.start, b.start));
-
-        List<Intervals> ans = new ArrayList<>();
-        ans.add(intervals.get(0));
-        int left = 0;
-
-        for (int i = 1; i < intervals.size(); i++) {
-            Intervals cur = intervals.get(i);
-            Intervals prev = ans.get(left);
-            if (isOverlap(prev, cur)) {
-                ans.remove(left);
-                ans.add(left, new Intervals(prev.start, Math.max(prev.end, cur.end)));
-            } else {
-                ans.add(cur);
-                left++;
-            }
-        }
-        return ans;
+        return Collections.emptyList();
     }
 
     static boolean isOverlap(Intervals left, Intervals right) {

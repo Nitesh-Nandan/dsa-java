@@ -1,8 +1,5 @@
 package slidingwindow;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class LongestSubArrayWithKDistinctChar {
 
     public static void main(String[] args) {

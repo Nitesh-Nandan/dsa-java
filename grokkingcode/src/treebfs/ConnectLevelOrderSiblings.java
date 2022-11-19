@@ -1,33 +1,8 @@
 package treebfs;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 class ConnectLevelOrderSiblings {
     public static void connect(TreeNode root) {
-        if (root == null) {
-            return;
-        }
-
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            TreeNode prev = null;
-            int level = queue.size();
-            while (level-- > 0) {
-                TreeNode curr = queue.poll();
-                if (prev != null) {
-                    prev.next = curr;
-                }
-                prev = curr;
-                if (curr.left != null) {
-                    queue.offer(curr.left);
-                }
-                if (curr.right != null) {
-                    queue.offer(curr.right);
-                }
-            }
-        }
+       return;
     }
 
     public static void main(String[] args) {

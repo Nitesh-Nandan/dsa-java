@@ -7,15 +7,7 @@ public class MagicNumber {
     }
 
     static boolean isHappyNumber(int num) {
-        int slow = calculateDigitSquareSum(num);
-        int fast = calculateDigitSquareSum(calculateDigitSquareSum(num));
-
-        while (slow != fast) {
-            slow = calculateDigitSquareSum(slow);
-            fast = calculateDigitSquareSum(calculateDigitSquareSum(fast));
-        }
-
-        return slow == 1;
+       return false;
     }
 
     static int calculateDigitSquareSum(int num) {

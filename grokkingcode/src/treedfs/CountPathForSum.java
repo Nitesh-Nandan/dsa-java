@@ -2,14 +2,7 @@ package treedfs;
 
 public class CountPathForSum {
     public static int countPaths(TreeNode root, int sum) {
-        if (root == null || sum < 0) {
-            return 0;
-        }
-        if (sum == root.val && root.left == null && root.right == null) {
-            return 1;
-        } else {
-            return countPaths(root.left, sum - root.val) + countPaths(root.right, sum - root.val);
-        }
+        return -1;
     }
 
     public static void main(String[] args) {

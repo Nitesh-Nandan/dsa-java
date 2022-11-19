@@ -2,7 +2,6 @@ package mergeInterval;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PriorityQueue;
 
 class Meeting {
     int start;
@@ -19,18 +18,6 @@ public class MinimumMeetingRooms {
     static int findMinimumMeetingRooms(List<Meeting> input) {
         if(input.size() < 2) return 1;
         int res = 1;
-        input.sort((a,b) -> Integer.compare(a.start, b.start));
-
-        PriorityQueue<Meeting> queue = new PriorityQueue<>((a, b) -> Integer.compare(a.end, b.end));
-
-        for (Meeting meeting : input) {
-            while (!queue.isEmpty() && queue.peek().end <= meeting.start) {
-              queue.poll();
-            }
-            queue.offer(meeting);
-
-            res = Math.max(res, queue.size());
-        }
         return res;
     }
 

@@ -1,37 +1,12 @@
 package treebfs;
 
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class LevelOrderAverage {
 
     static List<Double> findLevelAverages(TreeNode root) {
-        if (root == null) return Collections.emptyList();
-        List<Double> ans = new LinkedList<>();
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-
-        while (!queue.isEmpty()) {
-            double sum = 0;
-            int count = queue.size();
-            int itr = count;
-
-            while (itr-- > 0) {
-                TreeNode curr = queue.poll();
-                sum += curr.val;
-                if (curr.left != null) {
-                    queue.offer(curr.left);
-                }
-                if (curr.right != null) {
-                    queue.offer(curr.right);
-                }
-            }
-            ans.add((sum / count));
-        }
-
-        return ans;
+        return Collections.emptyList();
     }
 
     public static void main(String[] args) {

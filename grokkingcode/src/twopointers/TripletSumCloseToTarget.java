@@ -1,7 +1,5 @@
 package twopointers;
 
-import java.util.Arrays;
-
 public class TripletSumCloseToTarget {
     public static void main(String[] args) {
 

@@ -9,17 +9,7 @@ public class PathWithGivenSequence {
     }
 
     private static boolean findPathRecursive(TreeNode currentNode, int[] sequence, int sequenceIndex) {
-        if (currentNode == null) {
-            return false;
-        }
-        if (sequenceIndex >= sequence.length || currentNode.val != sequence[sequenceIndex]) {
-            return false;
-        }
-        if (currentNode.left == null && currentNode.right == null && sequenceIndex == sequence.length - 1) {
-            return true;
-        }
-        return findPathRecursive(currentNode.left, sequence, sequenceIndex + 1)
-                || findPathRecursive(currentNode.right, sequence, sequenceIndex + 1);
+        return false;
     }
 
     public static void main(String[] args) {

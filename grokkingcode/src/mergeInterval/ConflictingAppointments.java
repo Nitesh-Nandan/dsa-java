@@ -1,22 +1,8 @@
 package mergeInterval;
 
-import java.util.Arrays;
-
 public class ConflictingAppointments {
 
     static boolean canAttendAllMeetings(Intervals[] intervals) {
-        Arrays.sort(intervals, (a,b) -> Integer.compare(a.start, b.start));
-
-        Intervals prev = intervals[0];
-        int i = 1;
-        while (i < intervals.length) {
-            Intervals cur = intervals[i];
-            if(prev.end > cur.start) {
-                return false;
-            }
-            prev = cur;
-            i++;
-        }
         return true;
     }
 

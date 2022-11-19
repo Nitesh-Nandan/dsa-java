@@ -3,20 +3,6 @@ package cyclicsort;
 public class FindMissingAndRepeatingNumber {
 
     static int[] findMissingAndRepeatingNumber(int[] arr) {
-        int itr = 0;
-        while (itr < arr.length) {
-            if (arr[itr] != arr[arr[itr] - 1]) {
-                CyclicUtil.swap(arr, itr, arr[itr] - 1);
-            } else {
-                itr++;
-            }
-        }
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != i + 1) {
-                return new int[]{i + 1, arr[i]};
-            }
-        }
         return new int[]{};
     }
 

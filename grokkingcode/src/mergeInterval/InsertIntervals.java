@@ -7,21 +7,6 @@ public class InsertIntervals {
 
     static List<Intervals> insertIntervals(List<Intervals> intervals, Intervals newIntervals) {
         List<Intervals> ans = new ArrayList<>();
-        int itr = 0;
-        while (itr < intervals.size() && intervals.get(itr).end < newIntervals.start) {
-           ans.add(intervals.get(itr++));
-        }
-
-        while (itr < intervals.size() && intervals.get(itr).start <= newIntervals.end) {
-            newIntervals.start = Math.min(intervals.get(itr).start, newIntervals.start);
-            newIntervals.end = Math.max(intervals.get(itr).end, newIntervals.end);
-            itr++;
-        }
-        ans.add(newIntervals);
-        while (itr < intervals.size()) {
-            ans.add(intervals.get(itr++));
-        }
-
         return ans;
     }
 

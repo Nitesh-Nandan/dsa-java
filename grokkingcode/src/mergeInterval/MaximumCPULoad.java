@@ -3,7 +3,6 @@ package mergeInterval;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.PriorityQueue;
 
 class Job {
     int start;
@@ -22,17 +21,6 @@ public class MaximumCPULoad {
     static int findMaxCPULoad(List<Job> jobs) {
         jobs.sort((a, b) -> Integer.compare(a.start, b.start));
         int maxLoad = 0;
-        int currentCpuLoad = 0;
-        PriorityQueue<Job> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a.end, b.end));
-
-        for (Job job : jobs) {
-            while (!minHeap.isEmpty() && minHeap.peek().end <= job.start) {
-                currentCpuLoad -= minHeap.poll().cpuLoad;
-            }
-            minHeap.offer(job);
-            currentCpuLoad += job.cpuLoad;
-            maxLoad = Math.max(maxLoad, currentCpuLoad);
-        }
 
         return maxLoad;
     }

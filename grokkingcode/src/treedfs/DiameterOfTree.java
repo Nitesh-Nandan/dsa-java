@@ -10,16 +10,7 @@ public class DiameterOfTree {
     }
 
     static int helper(TreeNode curr) {
-        if (curr == null) {
-            return 0;
-        }
-        int lh = helper(curr.left);
-        int rh = helper(curr.right);
-        if (lh != 0 && rh != 0) {
-            int dia = lh + rh + 1;
-            treeDiameter = Math.max(treeDiameter, dia);
-        }
-        return Math.max(lh, rh) + 1;
+        return -1;
     }
 
     public static void main(String[] args) {

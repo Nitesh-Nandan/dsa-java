@@ -1,9 +1,6 @@
 package slidingwindow;
 
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class StringContainsAnyPermutationOfPattern {
     public static void main(String[] args) {
         System.out.println(isPermutationPresent("oidbcaf", "abc")); // true

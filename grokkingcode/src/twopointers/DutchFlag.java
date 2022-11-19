@@ -15,24 +15,6 @@ public class DutchFlag {
     }
 
     static void dutchSort(int[] arr) {
-        int left = 0;
-        int right = arr.length - 1;
-        int curr = 0;
-
-        while (curr < right && left < right) {
-            if (arr[curr] == 0) {
-                arr[curr] = arr[left];
-                arr[left++] = 0;
-                if (curr < left) {
-                    curr = left + 1;
-                }
-            } else if (arr[curr] == 2) {
-                arr[curr] = arr[right];
-                arr[right--] = 2;
-            } else {
-                curr++;
-            }
-        }
     }
 
     static void printArr(int[] arr) {

@@ -2,8 +2,8 @@ package mergeInterval;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
-import java.util.PriorityQueue;
 
 class Interval {
     int start;
@@ -30,42 +30,7 @@ class EmployeeInterval {
 class EmployeeFreeTime {
 
     public static List<Interval> findEmployeeFreeTime(List<List<Interval>> schedule) {
-        List<Interval> result = new ArrayList<>();
-        PriorityQueue<EmployeeInterval> minHeap = new PriorityQueue<>(
-                (a, b) -> Integer.compare(a.interval.start, b.interval.start));
-
-        for (int i = 0; i < schedule.size(); i++) {
-            minHeap.offer(new EmployeeInterval(schedule.get(i).get(0), i, 0));
-        }
-
-        Interval previousInterval = minHeap.peek().interval;
-
-        while (!minHeap.isEmpty()) {
-            EmployeeInterval curEmpInterval = minHeap.poll();
-
-            if (previousInterval.end < curEmpInterval.interval.start) {
-                result.add(new Interval(previousInterval.end, curEmpInterval.interval.start));
-                previousInterval = curEmpInterval.interval;
-            } else {
-                if (curEmpInterval.interval.end > previousInterval.end) {
-                    previousInterval = curEmpInterval.interval;
-                }
-            }
-
-            List<Interval> curEmployeeIntervalList = schedule.get(curEmpInterval.employeeIndex);
-
-            if (curEmpInterval.intervalIndex + 1 < curEmployeeIntervalList.size()) {
-                minHeap.offer(
-                        new EmployeeInterval(
-                                curEmployeeIntervalList.get(curEmpInterval.intervalIndex + 1),
-                                curEmpInterval.employeeIndex,
-                                curEmpInterval.intervalIndex + 1
-                        )
-                );
-            }
-        }
-
-        return result;
+        return Collections.emptyList();
     }
 
     public static void main(String[] args) {

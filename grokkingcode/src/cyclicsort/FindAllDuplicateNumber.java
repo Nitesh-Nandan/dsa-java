@@ -8,14 +8,6 @@ public class FindAllDuplicateNumber {
     // mutable
     static List<Integer> findAllDuplicateNumbers(int[] arr) {
         List<Integer> ans = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) {
-            int index = Math.abs(arr[i]) - 1;
-            if (arr[index] < 0) {
-                ans.add(index + 1);
-            } else {
-                arr[index] = -1 * arr[index];
-            }
-        }
         return ans;
     }
 

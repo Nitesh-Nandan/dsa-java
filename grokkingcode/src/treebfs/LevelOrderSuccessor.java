@@ -1,30 +1,9 @@
 package treebfs;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class LevelOrderSuccessor {
 
     static TreeNode findSuccessor(TreeNode treeNode, int val) {
-        if(treeNode == null) return null;
-
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(treeNode);
-
-        while (!queue.isEmpty()) {
-            TreeNode curr = queue.poll();
-            if(curr.left != null) {
-                queue.offer(curr.left);
-            }
-            if(curr.right != null) {
-                queue.offer(curr.right);
-            }
-            if(curr.val == val) {
-                break;
-            }
-        }
-
-        return queue.peek();
+        return null;
     }
 
 

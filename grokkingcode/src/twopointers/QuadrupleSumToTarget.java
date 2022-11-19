@@ -1,7 +1,6 @@
 package twopointers;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class QuadrupleSumToTarget {
@@ -11,39 +10,7 @@ public class QuadrupleSumToTarget {
     }
 
     static List<List<Integer>> findQuadruple(int[] arr, int tar) {
-        Arrays.sort(arr);
-        List<List<Integer>> ans = new ArrayList<>();
 
-        for(int i=0;i<arr.length-4; i++) {
-            if(i>0 && arr[i] == arr[i-1]) {
-                continue;
-            }
-            for(int j=i+1; j<arr.length -3; j++) {
-                if(arr[j] == arr[j-1]) {
-                    continue;
-                }
-                int left = j+1;
-                int right = arr.length - 1;
-
-                while (left < right) {
-                    int sum = arr[i] + arr[j] + arr[left] + arr[right];
-                    if(sum == tar) {
-                        ans.add(Arrays.asList(arr[i], arr[j], arr[left], arr[right]));
-                        left++;
-                        right--;
-                        while (left < right && arr[left] == arr[left - 1])
-                            left++; // skip same element to avoid duplicate quadruplets
-                        while (left < right && arr[right] == arr[right + 1])
-                            right--; // skip same
-                    }
-                    else if(sum < tar) {
-                        left++;
-                    } else {
-                        right--;
-                    }
-                }
-            }
-        }
-        return ans;
+        return Collections.emptyList();
     }
 }

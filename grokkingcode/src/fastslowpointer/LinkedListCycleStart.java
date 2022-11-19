@@ -3,37 +3,11 @@ package fastslowpointer;
 public class LinkedListCycleStart {
 
     public static ListNode findCycleStart(ListNode head) {
-        int len = cycleLength(head);
-        ListNode first = head;
-        ListNode second = head;
-        while (len > 0) {
-            first = first.next;
-            len--;
-        }
-        while (first != second) {
-            first = first.next;
-            second = second.next;
-        }
-        return first;
+        return null;
     }
 
     static int cycleLength(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
-        int count = 1;
-        while (fast != null && fast.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-            if (slow == fast) {
-                ListNode cur = slow.next;
-                while (cur != slow) {
-                    count++;
-                    cur = cur.next;
-                }
-                break;
-            }
-        }
-        return count;
+       return -1;
     }
 
     public static void main(String[] args) {

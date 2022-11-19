@@ -1,8 +1,5 @@
 package slidingwindow;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class LongestSubStringWithSameLetterAfterReplacement {
     public static void main(String[] args) {
 //        System.out.println(getMaxLength("aabccbb", 2));

@@ -1,8 +1,5 @@
 package slidingwindow;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class LongestSubstringWithMaximumKDistinctCharacter {
     public static void main(String[] args) {
         System.out.println(getMaxLen("araaci", 2)); // 4

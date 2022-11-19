@@ -1,41 +1,12 @@
 package treebfs;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class ZigZagTraversal {
 
     static List<List<Integer>> zigZagTraverse(TreeNode root) {
-        if (root == null) {
-            return Collections.emptyList();
-        }
         List<List<Integer>> ans = new LinkedList<>();
-        Queue<TreeNode> queue = new LinkedList<>();
-        int dir = 0;
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int itr = queue.size();
-            List<Integer> list = new LinkedList<>();
-            while (itr-- > 0) {
-                TreeNode cur = queue.poll();
-                if (dir == 0) {
-                    list.add(cur.val);
-                } else {
-                    list.add(0, cur.val);
-                }
-                if (cur.left != null) {
-                    queue.offer(cur.left);
-                }
-                if (cur.right != null) {
-                    queue.offer(cur.right);
-                }
-            }
-            ans.add(list);
-            dir = dir ^ 1;
-        }
-
         return ans;
     }
 

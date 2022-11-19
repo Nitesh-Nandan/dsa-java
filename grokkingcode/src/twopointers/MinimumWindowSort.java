@@ -10,29 +10,6 @@ public class MinimumWindowSort {
     }
 
     static int minimumLengthSort(int[] arr) {
-        int left = 0;
-        int right = arr.length-1;
-
-        while (left < arr.length-1 && arr[left] <= arr[left+1]) {
-            left++;
-        }
-        if(left == arr.length-1) return 0;
-
-        while (right > 0 && arr[right] >= arr[right-1]) {
-            right--;
-        }
-
-        int subarrayMax = Integer.MIN_VALUE, subarrayMin = Integer.MAX_VALUE;
-        for (int k = left; k <= right; k++) {
-            subarrayMax = Math.max(subarrayMax, arr[k]);
-            subarrayMin = Math.min(subarrayMin, arr[k]);
-        }
-        while (left > 0 && arr[left - 1] > subarrayMin) {
-            left--;
-        }
-        while (right < arr.length - 1 && arr[right + 1] < subarrayMax) {
-            right++;
-        }
-        return right-left+1;
+        return -1;
     }
 }

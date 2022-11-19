@@ -4,10 +4,7 @@ public class MinimumDepthOfBinaryTree {
 
     static int minDepthOfTree(TreeNode root) {
         if (root == null) return 0;
-        int leftDepth = minDepthOfTree(root.left);
-        int rightDepth = minDepthOfTree(root.right);
-
-        return (leftDepth == 0 || rightDepth == 0) ? (leftDepth + rightDepth + 1) : 1 + Math.min(leftDepth, rightDepth);
+        return -1;
     }
 
     public static void main(String[] args) {
