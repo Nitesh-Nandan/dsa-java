@@ -1,11 +1,15 @@
 package twoheaps;
 
+import util.Pair;
 import util.TestCaseUtil;
+
+import java.util.Collections;
+import java.util.PriorityQueue;
 
 
 public class MaximizeCapital {
     // O(N^2)
-    public static int maximumCapital(int cap, int k, int[] capitals, int[] profits) {
+    public static int maximumCapitalBruteForce(int cap, int k, int[] capitals, int[] profits) {
         int ans = cap;
 
         while (k > 0) {
@@ -24,6 +28,29 @@ public class MaximizeCapital {
             k--;
         }
 
+        return ans;
+    }
+
+//    O(NlogN +KlogN), that is, O((n+k)logN).
+    public static int maximumCapital(int cap, int k, int[] capitals, int[] profits) {
+        int ans = cap;
+        PriorityQueue<Pair<Integer>> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a.first, b.first));
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+        for (int i = 0; i < capitals.length; i++) {
+            minHeap.offer(new Pair<>(capitals[i], i));
+        }
+
+        while (k > 0) {
+            while (!minHeap.isEmpty() && minHeap.peek().first <= ans) {
+                Pair<Integer> cur = minHeap.poll();
+                maxHeap.offer(profits[cur.second]);
+            }
+            if (maxHeap.isEmpty()) {
+                break;
+            }
+            ans += maxHeap.poll();
+            k--;
+        }
         return ans;
     }
 
