@@ -6,7 +6,7 @@ public class TestCaseUtil {
         if (expected.equals(actual)) {
             System.out.println("Test Case: " + number + " Passed.");
         } else {
-            System.out.println("Test Case: " + number + " Failed.");
+            System.out.println("Test Case: " + number + " Failed. Expected: " + expected + " Actual: " + actual);
         }
     }
 }
