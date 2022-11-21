@@ -37,10 +37,10 @@ public class MedianOfTwoSortedArray {
     }
 
     public static void main(String[] args) {
-        TestCaseUtil.run(2.5f, findMedian(new int[]{1, 2}, new int[]{3, 4}), 1);
-        TestCaseUtil.run(6.0f, findMedian(new int[]{1, 5, 8}, new int[]{4, 7, 9}), 2);
-        TestCaseUtil.run(6.5f, findMedian(new int[]{2, 4, 6, 8, 10, 12}, new int[]{1, 3, 5, 7, 9, 11}), 3);
-        TestCaseUtil.run(22.0f, findMedian(new int[]{5, 7, 8, 13, 17, 22, 29}, new int[]{30, 32, 39, 41}), 4);
-        TestCaseUtil.run(134.0f, findMedian(new int[]{100, 123, 145, 155}, new int[]{4, 76, 222, 635}), 5);
+        TestCaseUtil.test(2.5f, findMedian(new int[]{1, 2}, new int[]{3, 4}), 1);
+        TestCaseUtil.test(6.0f, findMedian(new int[]{1, 5, 8}, new int[]{4, 7, 9}), 2);
+        TestCaseUtil.test(6.5f, findMedian(new int[]{2, 4, 6, 8, 10, 12}, new int[]{1, 3, 5, 7, 9, 11}), 3);
+        TestCaseUtil.test(22.0f, findMedian(new int[]{5, 7, 8, 13, 17, 22, 29}, new int[]{30, 32, 39, 41}), 4);
+        TestCaseUtil.test(134.0f, findMedian(new int[]{100, 123, 145, 155}, new int[]{4, 76, 222, 635}), 5);
     }
 }

@@ -51,7 +51,7 @@ public class SmallestKNumber {
         lists.add(l2);
         lists.add(l3);
 
-        TestCaseUtil.run(6, findKthSmallestNumber(lists, 5), 1);
+        TestCaseUtil.test(6, findKthSmallestNumber(lists, 5), 1);
     }
 
     private static void test2() {
@@ -67,7 +67,7 @@ public class SmallestKNumber {
         lists1.add(l41);
         lists1.add(l51);
 
-        TestCaseUtil.run(15, findKthSmallestNumber(lists1, 50), 2);
+        TestCaseUtil.test(15, findKthSmallestNumber(lists1, 50), 2);
     }
 
     private static void test3() {
@@ -79,7 +79,7 @@ public class SmallestKNumber {
         lists2.add(l211);
         lists2.add(l311);
 
-        TestCaseUtil.run(0, findKthSmallestNumber(lists2, 4), 3);
+        TestCaseUtil.test(0, findKthSmallestNumber(lists2, 4), 3);
     }
 
     private static void test4() {
@@ -91,7 +91,7 @@ public class SmallestKNumber {
         lists3.add(l2111);
         lists3.add(l3111);
 
-        TestCaseUtil.run(3, findKthSmallestNumber(lists3, 4), 4);
+        TestCaseUtil.test(3, findKthSmallestNumber(lists3, 4), 4);
     }
 
     private static void test5() {
@@ -103,6 +103,6 @@ public class SmallestKNumber {
         lists4.add(l21111);
         lists4.add(l31111);
 
-        TestCaseUtil.run(24, findKthSmallestNumber(lists4, 8), 5);
+        TestCaseUtil.test(24, findKthSmallestNumber(lists4, 8), 5);
     }
 }

@@ -2,7 +2,7 @@ package util;
 
 public class TestCaseUtil {
 
-    public static void run(Object expected, Object actual, int number) {
+    public static void test(Object expected, Object actual, int number) {
         if (expected.equals(actual)) {
             System.out.println("Test Case: " + number + " Passed.");
         } else {

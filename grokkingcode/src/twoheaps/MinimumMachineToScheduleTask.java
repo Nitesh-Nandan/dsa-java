@@ -42,7 +42,7 @@ public class MinimumMachineToScheduleTask {
         tasks.add(new ArrayList<>(Arrays.asList(10, 10)));
         tasks.add(new ArrayList<>(Arrays.asList(7, 7)));
 
-        TestCaseUtil.run(1, ScheduleTask.tasks(tasks), 1);
+        TestCaseUtil.test(1, ScheduleTask.tasks(tasks), 1);
     }
 
     static void test2() {
@@ -54,7 +54,7 @@ public class MinimumMachineToScheduleTask {
         tasks.add(new ArrayList<>(Arrays.asList(1, 7)));
         tasks.add(new ArrayList<>(Arrays.asList(1, 7)));
 
-        TestCaseUtil.run(6, ScheduleTask.tasks(tasks), 2);
+        TestCaseUtil.test(6, ScheduleTask.tasks(tasks), 2);
     }
 
     static void test3() {
@@ -65,7 +65,7 @@ public class MinimumMachineToScheduleTask {
         tasks.add(new ArrayList<>(Arrays.asList(10, 14)));
         tasks.add(new ArrayList<>(Arrays.asList(6, 7)));
 
-        TestCaseUtil.run(2, ScheduleTask.tasks(tasks), 3);
+        TestCaseUtil.test(2, ScheduleTask.tasks(tasks), 3);
     }
 
     static void test4() {
@@ -78,7 +78,7 @@ public class MinimumMachineToScheduleTask {
         tasks.add(new ArrayList<>(Arrays.asList(13, 16)));
         tasks.add(new ArrayList<>(Arrays.asList(16, 17)));
 
-        TestCaseUtil.run(1, ScheduleTask.tasks(tasks), 4);
+        TestCaseUtil.test(1, ScheduleTask.tasks(tasks), 4);
     }
 
     static void test5() {
@@ -90,6 +90,6 @@ public class MinimumMachineToScheduleTask {
         tasks.add(new ArrayList<>(Arrays.asList(19, 21)));
         tasks.add(new ArrayList<>(Arrays.asList(18, 20)));
 
-        TestCaseUtil.run(3, ScheduleTask.tasks(tasks), 5);
+        TestCaseUtil.test(3, ScheduleTask.tasks(tasks), 5);
     }
 }

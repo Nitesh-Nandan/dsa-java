@@ -56,24 +56,24 @@ public class KSmallestElementsInSortedMatrix {
     static void test1() {
         int[][] matrix = {{2, 6, 8}, {3, 7, 10}, {5, 8, 11}};
 
-        TestCaseUtil.run(5, kthSmallestElement(matrix, 3), 1);
+        TestCaseUtil.test(5, kthSmallestElement(matrix, 3), 1);
     }
 
     static void test2() {
         int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-        TestCaseUtil.run(4, kthSmallestElement(matrix, 4), 2);
+        TestCaseUtil.test(4, kthSmallestElement(matrix, 4), 2);
     }
 
     static void test3() {
         int[][] matrix = {{}, {}};
 
-        TestCaseUtil.run(-1, kthSmallestElement(matrix, 1), 3);
+        TestCaseUtil.test(-1, kthSmallestElement(matrix, 1), 3);
     }
 
     static void test4() {
         int[][] matrix = {{2, 2, 6, 6, 8, 9}, {1, 4, 7, 10, 10, 22}, {5, 7, 9, 11, 13, 15}, {44, 55, 66, 77, 88, 99}};
 
-        TestCaseUtil.run(7, kthSmallestElement(matrix, 8), 4);
+        TestCaseUtil.test(7, kthSmallestElement(matrix, 8), 4);
     }
 }
