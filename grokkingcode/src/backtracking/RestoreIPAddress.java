@@ -26,7 +26,7 @@ public class RestoreIPAddress {
         for (int i = index; i < Math.min(index + 3, str.length()); i++) {
             sb.append(str.charAt(i));
             if (isValid(sb.toString())) {
-                String newCurr = curr + sb + ".";
+                String newCurr = curr + Integer.parseInt(sb.toString()) + ".";
                 restoreIPHelper(str, i + 1, dot + 1, newCurr, ans);
             }
         }
@@ -44,6 +44,7 @@ public class RestoreIPAddress {
         test4();
         test5();
         test6();
+        test7();
     }
 
 
@@ -74,6 +75,11 @@ public class RestoreIPAddress {
 
     static void test6() {
         String str = "12121212";
+        System.out.println(restoreIpAddresses(str));
+    }
+
+    static void test7() {
+        String str = "00000000";
         System.out.println(restoreIpAddresses(str));
     }
 
