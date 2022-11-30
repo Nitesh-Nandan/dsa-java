@@ -4,9 +4,6 @@ import util.TestCaseUtil;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
-
-import static java.util.Comparator.reverseOrder;
 
 public class MatchStickSquare {
     public static boolean matchstickToSquare(int[] nums) {
