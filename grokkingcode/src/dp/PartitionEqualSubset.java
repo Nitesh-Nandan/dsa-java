@@ -89,7 +89,7 @@ class Solution4 {
         boolean[][] dp = new boolean[tar + 1][arr.length + 1];
         dp[0][0] = true;
         for (int i = 1; i <= tar; i++) dp[i][0] = false;
-        for (int i = 1; i <= arr.length; i++) dp[0][i] = false;
+        for (int i = 1; i <= arr.length; i++) dp[0][i] = true;
 
         for(int i=1; i<=tar; i++) {
             for(int j=1; j<=arr.length; j++) {
