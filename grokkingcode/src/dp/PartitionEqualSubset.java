@@ -3,7 +3,6 @@ package dp;
 import util.TestCaseUtil;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 // very-very inefficient way of doing it.
 class Solution1 {
