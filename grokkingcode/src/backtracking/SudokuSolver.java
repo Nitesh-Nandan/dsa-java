@@ -70,6 +70,7 @@ public class SudokuSolver {
 
         solveSudoku(board);
         print(board);
+
     }
 
     static void test2() {
