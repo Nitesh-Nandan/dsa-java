@@ -33,6 +33,10 @@ public class Trie {
         return currNode.isWord;
     }
 
+    public TrieNode getRoot() {
+        return this.root;
+    }
+
     public boolean searchPrefix(String prefix) {
         TrieNode currNode = root;
         for (char ch : prefix.toCharArray()) {
@@ -42,6 +46,33 @@ public class Trie {
             currNode = currNode.getChildren().get(ch);
         }
         return true;
+    }
+
+    public void printAllStringMatchesToPrefix(String prefix) {
+        TrieNode currNode = root;
+        for (char ch : prefix.toCharArray()) {
+            if (!currNode.getChildren().containsKey(ch)) {
+                return;
+            }
+            currNode = currNode.getChildren().get(ch);
+        }
+        if (currNode.isWord()) {
+            System.out.print(prefix + " ");
+        }
+        helper(currNode, prefix);
+        System.out.println();
+    }
+
+    private void helper(TrieNode node, String prefix) {
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            if (node.getChildren().containsKey(ch)) {
+                TrieNode curr = node.getChildren().get(ch);
+                if (curr.isWord) {
+                    System.out.print(prefix + ch + " ");
+                }
+                helper(curr, prefix + ch);
+            }
+        }
     }
 
     static class TrieNode {
