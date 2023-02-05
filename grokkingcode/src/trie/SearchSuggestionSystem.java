@@ -1,36 +1,75 @@
 package trie;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class SearchSuggestionSystem {
 
     public static List<List<String>> suggestedProducts(String[] products, String searchWord) {
-        Trie trie = new Trie();
+        SearchTrie searchTrie = new SearchTrie();
         for (String product : products) {
-            trie.insert(product);
+            searchTrie.insert(product);
         }
+
         List<List<String>> ans = new ArrayList<>();
-        StringBuilder sb = new StringBuilder();
+        String prefix = "";
+
         for (char ch : searchWord.toCharArray()) {
-            sb.append(ch);
-            ans.add(getPrefixMatch(trie.getRoot(), sb.toString(), 3));
+            prefix = prefix + ch;
+            ans.add(searchTrie.getSearchWordsForPrefix(prefix));
         }
+
         return ans;
     }
 
-    static List<String> getPrefixMatch(Trie.TrieNode trieNode, String str, int limit) {
-        return Collections.emptyList();
-    }
 
     public static void main(String[] args) {
         test1();
+        test2();
+        test3();
+        test4();
+        test5();
+        test6();
     }
 
     static void test1() {
         String[] products = new String[]{"carpet", "cart", "car", "camera", "crate"};
         String searchWord = "camera";
+
+        System.out.println(suggestedProducts(products, searchWord));
+    }
+
+    static void test2() {
+        String[] products = new String[]{"mobile", "mouse", "moneypot", "monitor", "mousepad"};
+        String searchWord = "mouse";
+
+        System.out.println(suggestedProducts(products, searchWord));
+    }
+
+    static void test3() {
+        String[] products = new String[]{"havana"};
+        String searchWord = "havana";
+
+        System.out.println(suggestedProducts(products, searchWord));
+    }
+
+    static void test4() {
+        String[] products = new String[]{"bags", "baggage", "banner", "box", "cloths"};
+        String searchWord = "bags";
+
+        System.out.println(suggestedProducts(products, searchWord));
+    }
+
+    static void test5() {
+        String[] products = new String[]{"havana"};
+        String searchWord = "tatiana";
+
+        System.out.println(suggestedProducts(products, searchWord));
+    }
+
+    static void test6() {
+        String[] products = new String[]{"razer", "blade", "knife", "cutter", "games"};
+        String searchWord = "games";
 
         System.out.println(suggestedProducts(products, searchWord));
     }
