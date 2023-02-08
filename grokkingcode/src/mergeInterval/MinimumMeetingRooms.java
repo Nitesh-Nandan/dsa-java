@@ -87,5 +87,15 @@ public class MinimumMeetingRooms {
         };
         result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
         System.out.println("Minimum meeting rooms required: " + result); // 2
+
+        input = new ArrayList<Meeting>() {
+            {
+                add(new Meeting(1, 2));
+                add(new Meeting(2, 3));
+                add(new Meeting(3, 4));
+            }
+        };
+        result = MinimumMeetingRooms.findMinimumMeetingRooms(input);
+        System.out.println("Minimum meeting rooms required: " + result); // 2
     }
 }
