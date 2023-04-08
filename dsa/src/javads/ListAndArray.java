@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class ListAndArray {
 
     public static void main(String[] args) {
-        playWithList();
+        run();
 //        listToArray();
 //        arrayToList();
 //        playingWithDoubleList();
@@ -84,5 +84,22 @@ public class ListAndArray {
 
         System.out.println();
 
+    }
+
+    static void run() {
+        float len = 7.0f;
+        float width = 6.0f;
+
+        for(int i=0; i<10; i++) {
+            float nlen = len + (0.5f * i);
+            for(int j=0; j<10; j++) {
+                float nwidth  = width + (0.5f*j);
+
+                int dim  = (int) Math.ceil((nlen * nwidth * 12 * 12 * 9));
+                if(dim % 8 == 2) {
+                    System.out.println("len: " + nlen + ", width: " + nwidth);
+                }
+            }
+        }
     }
 }

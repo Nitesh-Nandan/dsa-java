@@ -106,9 +106,9 @@ public class DetectCycleInDirectedGraph {
     static void test2() {
         Map<Character, List<Character>> graph = new HashMap<>();
         graph.put('A', new ArrayList<>());
-        graph.put('B', List.of('A'));
-        graph.put('C', List.of('A'));
-        graph.put('D', List.of('B'));
+        graph.put('B', Arrays.asList('A'));
+        graph.put('C', Arrays.asList('A'));
+        graph.put('D', Arrays.asList('B'));
         graph.put('E', Arrays.asList('B', 'C', 'D'));
         graph.put('F', Arrays.asList('D', 'C'));
 

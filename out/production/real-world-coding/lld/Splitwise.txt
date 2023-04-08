@@ -1,0 +1,117 @@
+Enitites
+Classes
+API
+
+Similar to  Splitwise
+
+Add a friend
+Create a group
+Adding an expense (Group, Contact)
+Settlement Of Expenses.
+
+Classes:
+
+User (friend, actual user)
+Group
+Services:
+   User Management
+   Expense Mnagenement
+
+
+Class User {
+   String name;
+   String phone;
+}
+
+Class Group {
+   String name;
+   List<User> users;
+}
+
+Enum SettlementStatus {
+ PARTIAL, SETTLED
+}
+
+// cache
+interface UserManagementServive {
+     Void registerUser();
+      Void createGroup(GroupCreateRequest request);
+      Void addContact(List<User> users);
+      Void addContactToGroup(int userId, int groupId);
+      List<User> getAllUsers();
+      List<Group> getAllGroups();
+}
+
+Sharding : custom ()
+
+Class OwedAmoutResponse {
+   List<UserLevelExpenses> lentSummary;
+
+   Static class UserLevelExpenses {
+        Int userid;
+       Double amount;
+       Boolean isOwed;
+   }
+}
+
+Enum SPLITTYPE {
+    WHOLE, CUSTOM
+ }
+Class SplitRule {
+   SPLITTYPE type; (whole, Custom)
+   User PaidBy;
+   Map<UserId, Amount> userAMountMap;
+}
+Interface ExpenseMangement {
+   Void addExpensesToGroup(int userId, int groupId, double amount, SplitRule splitRule);
+   Void addExpensesToUser(int userId, double amout);
+    OwedAmountResponse getSummary(int userId);
+   Void settleExpenses(int userId, int benficiaryId, double amount);
+}
+
+Tables:
+
+User : id, name , phone …etc
+Group: id, name, createdBy… etc
+Group_user_mapping table
+
+User_lent_summary: fk_friend(user), amount, is_settled, date
+Transaction: userId, amount, userid, time, fk_user_lent;
+
+U1 -> 100
+U2 -> 200
+
+U1 -> 50
+
+User_total_amount_summayr:
+ U1 -> 300-50
+
+Entity log (traciblilry)
+
+
+======================================
+
+Get info: dashBoardSumary, friendList, GroupList
+\
+     Get: /api/v1/get-dashboradSummry?page=1&pageSize=10
+
+       Response: code: 200
+         totalRecords:
+         currentPage:
+         {displayname, amount, isOwed }
+
+
+Read Heavy
+
+RPS low Write (
+
+
+
+
+
+
+
+
+
+
+
