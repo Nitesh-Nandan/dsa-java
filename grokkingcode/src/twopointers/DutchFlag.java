@@ -19,20 +19,24 @@ public class DutchFlag {
         int right = arr.length - 1;
         int curr = 0;
 
-        while (curr < right && left < right) {
-            if (arr[curr] == 0) {
-                arr[curr] = arr[left];
-                arr[left++] = 0;
-                if (curr < left) {
-                    curr = left + 1;
-                }
+        while (curr <= right) {
+            if(arr[curr] == 0) {
+                swap(arr, curr, left);
+                left++;
+                if(left > curr) curr = left;
             } else if (arr[curr] == 2) {
-                arr[curr] = arr[right];
-                arr[right--] = 2;
+                swap(arr, curr, right);
+                right--;
             } else {
                 curr++;
             }
         }
+    }
+
+    static void swap(int[]arr, int x, int y) {
+        int tmp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = tmp;
     }
 
     static void printArr(int[] arr) {
