@@ -1,19 +1,19 @@
 package util;
 
-public class Pair<T> {
-    public T first;
-    public T second;
+public class Pair<K, V> {
+    public K first;
+    public V second;
 
-    public Pair(T a, T b) {
+    public Pair(K a, V b) {
         this.first = a;
         this.second = b;
     }
 
-    public T getFirst() {
+    public K getFirst() {
         return first;
     }
 
-    public T getSecond() {
+    public V getSecond() {
         return second;
     }
 }
