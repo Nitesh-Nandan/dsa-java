@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-/**
+/*
  * Input: String="ppqp", Pattern="pq"
  * Output: [1, 2]
  * Explanation: The two anagrams of the pattern in the given string are "pq" and "qp".
