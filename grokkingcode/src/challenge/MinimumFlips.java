@@ -41,10 +41,15 @@ public class MinimumFlips {
     }
 
     public static void main(String[] args) {
-        test1();
+        char ch = 'a';
+        System.out.println(("" + ch).toUpperCase());
+        ch = (char) (ch | (0 << 5));
+        System.out.println(ch);
+
+//        test1();
     }
 
     public static void test1() {
-        System.out.println(minFlips("110011011"));
+        System.out.println(minFlips("01001001101"));
     }
 }
