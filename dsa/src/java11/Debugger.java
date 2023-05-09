@@ -1,8 +1,12 @@
 package java11;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Debugger {
 
@@ -37,10 +41,13 @@ public class Debugger {
     }
 
     public static void main(String[] args) {
-//        int[] arr = {1, 2, 3};
-//        nextPermutation(arr);
 
-        int[] arr2 = new int[]{5,3,4,9,7, 6,};
-        nextPermutation(arr2);
+        Map<Integer, List<Integer>> test = new HashMap<>();
+        test.computeIfAbsent(1000, k -> {
+            System.out.println(k);
+            return new ArrayList<>();
+        }).add(5);
+
+        System.out.println(test);
     }
 }

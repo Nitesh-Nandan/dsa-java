@@ -1,6 +1,5 @@
 package twoheaps;
 
-import util.Pair;
 import util.TestCaseUtil;
 
 import java.util.Collections;

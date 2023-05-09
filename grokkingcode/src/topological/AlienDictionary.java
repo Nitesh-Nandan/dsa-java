@@ -41,7 +41,7 @@ public class AlienDictionary {
         }
 
         Queue<Character> queue = new LinkedList<>();
-        for (Map.Entry<Character, Integer> entry : indegree.entrySet()) {
+            for (Map.Entry<Character, Integer> entry : indegree.entrySet()) {
             if (entry.getValue() == 0) {
                 queue.offer(entry.getKey());
             }

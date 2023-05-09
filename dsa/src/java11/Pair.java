@@ -1,16 +1,10 @@
-package util;
+package java11;
 
 import java.util.Objects;
 
 public class Pair<T, U> {
-    private T key;
-    private U value;
-
-    public Pair(T key, U value) {
-        this.key = key;
-        this.value = value;
-
-    }
+    T key;
+    U value;
 
     @Override
     public boolean equals(Object o) {
@@ -25,6 +19,11 @@ public class Pair<T, U> {
         return Objects.hash(key, value);
     }
 
+    public Pair(T key, U value) {
+        this.key = key;
+        this.value = value;
+
+    }
     public T getKey() {
         return key;
     }

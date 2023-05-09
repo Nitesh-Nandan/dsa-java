@@ -1,22 +1,15 @@
 package custom;
 
-import util.Pair;
-
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
-
 //class LFUCache {
 //    // key: original key, value: frequency and original value.
-//    private Map<Integer, Pair<Integer, Integer>> cache;
+//    private Map<Integer, util.Pair<Integer, Integer>> cache;
 //    // key: frequency, value: All keys that have the same frequency.
 //    private Map<Integer, LinkedHashSet<Integer>> frequencies;
 //    private int minf;
 //    private int capacity;
 //
 //    private void insert(int key, int frequency, int value) {
-//        cache.put(key, new Pair<>(frequency, value));
+//        cache.put(key, new util.Pair<>(frequency, value));
 //        frequencies.putIfAbsent(frequency, new LinkedHashSet<>());
 //        frequencies.get(frequency).add(key);
 //    }
@@ -29,7 +22,7 @@ import java.util.Set;
 //    }
 //
 //    public int get(int key) {
-//        Pair<Integer, Integer> frequencyAndValue = cache.get(key);
+//        util.Pair<Integer, Integer> frequencyAndValue = cache.get(key);
 //        if (frequencyAndValue == null) {
 //            return -1;
 //        }
@@ -52,9 +45,9 @@ import java.util.Set;
 //        if (capacity <= 0) {
 //            return;
 //        }
-//        Pair<Integer, Integer> frequencyAndValue = cache.get(key);
+//        util.Pair<Integer, Integer> frequencyAndValue = cache.get(key);
 //        if (frequencyAndValue != null) {
-//            cache.put(key, new Pair<>(frequencyAndValue.getKey(), value));
+//            cache.put(key, new util.Pair<>(frequencyAndValue.getKey(), value));
 //            get(key);
 //            return;
 //        }

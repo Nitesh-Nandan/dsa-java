@@ -1,6 +1,5 @@
 package kwaymerge;
 
-import util.Pair;
 import util.TestCaseUtil;
 
 import java.util.ArrayList;
