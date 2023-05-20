@@ -1,0 +1,91 @@
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export JAVA_HOME=$(/usr/libexec/java_home)
+eval $(thefuck --alias)
+
+# export PS1="nitesh {\w} %"
+# Nodejs
+export PATH="$HOME/local/lib/nodejs/bin:$PATH"
+
+# kafka
+export PATH="$HOME/local/lib/kafka_2.13-2.7.1/bin:$PATH"
+
+#maven
+export PATH="$HOME/local/lib/apache-maven-3.6.1/bin:$PATH"
+# Sublime
+# PATH="$HOME/local/lib/sublime/:$PATH"
+
+# Atom
+# PATH="$HOME/local/lib/atom/:$PATH"
+
+#postman
+# PATH="$HOME/local/lib/Postman/:$PATH"
+
+#GO
+#PATH="$HOME/local/lib/go/bin/:$PATH"
+
+#REDIS_CLI
+PATH="$HOME/local/lib/redis-6.2.4/src/:$PATH"
+
+# CustomScript
+PATH="$HOME/local/lib/customscript:$PATH"
+
+# Sublime Merge
+# PATH="$HOME/local/lib/sublime_merge:$PATH"
+
+
+# export PS1="nitesh "
+
+#alias
+alias as="tmux -CC attach-session -t"
+alias ns="tmux -CC new-session -s"
+alias ks="pkill -f tmux"
+alias itmux="tmux -CC"
+alias dev="ssh nitesh.nandan@172.31.16.47"
+alias qa="ssh nitesh.nandan@172.31.21.190"
+alias ref="ssh ubuntu@172.31.28.61"
+alias store="ssh nitesh.nandan@172.31.17.193"
+alias sb='subl ~/nitesh/scratchboard'
+alias ws="cd ~/meesho/workspace"
+alias ll="ls -alh"
+alias config="code ~/meesho/config"
+alias nn="cd ~/nitesh"
+alias del="rm -rf"
+alias graph='git log --oneline --all --decorate --graph'
+alias home='cd'
+alias lc='git log -n 1  --pretty=format:"commitedBy: %Cred%an, %Cgreen%s, %Cblue%cd"'
+alias lcls='git diff --name-only HEAD HEAD~1'
+alias copy='cp -v -R'
+alias move='mv -f -v'
+alias commands='cat ~/Public/commands.json'
+alias ecommands='subl ~/Public/commands.json'
+# alias subl='nohup subl >/dev/null 2&1 & disown'
+alias postman='nohup Postman >/dev/null 2>&1 & disown'
+alias atom='nohup atom >/dev/null 2>&1 & disown'
+alias run='sh $HOME/local/lib/customscript/runc++.sh'
+alias pclean='sh $HOME/local/lib/customscript/pclean.sh'
+alias clone='sh $HOME/local/lib/customscript/clone.sh'
+alias emvn='sh $HOME/local/lib/customscript/enableMaven.sh'
+alias dmvn='sh $HOME/local/lib/customscript/disableMaven.sh'
+alias launch='sh $HOME/local/lib/customscript/dockerstarter.sh'
+alias gd='cd ~/Desktop'
+alias dsa='code /Users/niteshnandan/nitesh/dsa'
+alias sts='$HOME/local/lib/sts/SpringToolSuite4 >/dev/null 2>&1 & disown'
+alias discord='$HOME/local/lib/Discord/Discord >/dev/null 2>&1 & disown'
+alias eclipse='$HOME/local/lib/eclipse/eclipse >/dev/null 2>&1 & disown'
+alias edit='subl ~/workspace/ide/sublime'
+# alias worker='docker exec -it txtlocal_dev_workers bash'
+# alias web='docker exec -it txtlocal_dev_web bash'
+# alias lgs='docker exec -it txtlocal_dev_lgsengine bash'
+alias sphp='docker container run --rm -it -v /home/local/IMIDOMAIN/nitesh.na/workspace/nitesh/learnPHP:/code/ -w /code --name phpcon php:latest bash'
+# alias indweb1='ssh nitesh.na@172.16.167.87'
+# alias indweb2='ssh nitesh.na@172.16.167.88'
+# alias ukweb1='ssh nitesh.na@94.236.0.90'
+alias tel='$HOME/local/lib/Telegram/Telegram >/dev/null 2>&1 & disown'
+alias bast="ssh nitesh.nandan@prod-bastion.meeshoint.in"
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+export PATH=$PATH:~/.awsudo/bin
+setjdk() {
+    version=$1
+    export JAVA_HOME=$(/usr/libexec/java_home -v"${version}")
+    java -version
+}
