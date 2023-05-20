@@ -3,101 +3,57 @@ package java11;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
+import java.util.Stack;
 
 class Solution {
+    public int maxDistToClosest(int[] seats) {
+        int n = seats.length;
+        int[] left = new int[n];
+        int[] right = new int[n];
 
-    private Map<Integer, List<Integer>> graph;
-    private Map<Integer, Integer> rank;
-    private Map<Pair<Integer, Integer>, Boolean> connDict;
+        left[0] = seats[0] == 0 ? 1 : 0;
 
-    public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
-
-        this.formGraph(n, connections);
-        this.dfs(0, 0);
-
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
-        for (Pair<Integer, Integer> criticalConnection : this.connDict.keySet()) {
-            result.add(new ArrayList<Integer>(Arrays.asList(criticalConnection.getKey(), criticalConnection.getValue())));
-        }
-
-        return result;
-    }
-
-    private int dfs(int node, int discoveryRank) {
-
-        // That means this node is already visited. We simply return the rank.
-        if (this.rank.get(node) != null) {
-            return this.rank.get(node);
-        }
-
-        // Update the rank of this node.
-        this.rank.put(node, discoveryRank);
-
-        // This is the max we have seen till now. So we start with this instead of INT_MAX or something.
-        int minRank = discoveryRank + 1;
-
-        for (Integer neighbor : this.graph.get(node)) {
-
-            // Skip the parent.
-            Integer neighRank = this.rank.get(neighbor);
-            if (neighRank != null && neighRank == discoveryRank - 1) {
-                continue;
+        for(int i=1; i<n; i++) {
+            if(seats[i] == 1) {
+                left[i] = 0;
+            } else {
+                left[i] = 1 + left[i-1];
             }
+        }
 
-            // Recurse on the neighbor.
-            int recursiveRank = this.dfs(neighbor, discoveryRank + 1);
+        right[n-1] = seats[n-1] == 0 ? n : 0;
 
-            // Step 1, check if this edge needs to be discarded.
-            if (recursiveRank <= discoveryRank) {
-                int sortedU = Math.min(node, neighbor), sortedV = Math.max(node, neighbor);
-                this.connDict.remove(new Pair<Integer, Integer>(sortedU, sortedV));
+        for(int i=n-2; i>=0; i--) {
+            if(seats[i] == 1) {
+                right[i] = 0;
+            } else {
+                right[i] = 1 + right[i+1];
             }
-
-            // Step 2, update the minRank if needed.
-            minRank = Math.min(minRank, recursiveRank);
         }
 
-        return minRank;
-    }
+        int ans = 0;
 
-    private void formGraph(int n, List<List<Integer>> connections) {
-
-        this.graph = new HashMap<Integer, List<Integer>>();
-        this.rank = new HashMap<Integer, Integer>();
-        this.connDict = new HashMap<Pair<Integer, Integer>, Boolean>();
-
-        // Default rank for unvisited nodes is "null"
-        for (int i = 0; i < n; i++) {
-            this.graph.put(i, new ArrayList<Integer>());
-            this.rank.put(i, null);
+        for(int i=0; i<n; i++) {
+            ans = Math.max(ans, Math.min(left[i], right[i]));
         }
 
-        for (List<Integer> edge : connections) {
-
-            // Bidirectional edges
-            int u = edge.get(0), v = edge.get(1);
-            this.graph.get(u).add(v);
-            this.graph.get(v).add(u);
-
-            int sortedU = Math.min(u, v), sortedV = Math.max(u, v);
-            connDict.put(new Pair<Integer, Integer>(sortedU, sortedV), true);
-        }
+        return ans;
     }
 }
+
 public class LeetCode {
     public static void main(String[] args) {
         test1();
     }
+
     private static void test1() {
-        Solution sol = new Solution();
-//        [[0,1],[1,2],[2,0],[1,3]]
-        List<List<Integer>> edges = new ArrayList<>();
-        edges.add(Arrays.asList(0,1));
-        edges.add(Arrays.asList(1,2));
-        edges.add(Arrays.asList(2,0));
-        edges.add(Arrays.asList(1,3));
-        System.out.println(sol.criticalConnections(4, edges));
+        int[] courses = new int[]{1, 0, 0 ,1};
+        Solution solution = new Solution();
+        System.out.println(solution.maxDistToClosest(courses));
     }
+
 }

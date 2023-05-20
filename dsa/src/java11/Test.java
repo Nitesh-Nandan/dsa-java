@@ -27,7 +27,7 @@ import java.util.Stack;
 
 **/
 
-public class NextGreaterElement {
+public class Test {
 
     public static  void nextGreaterElement(int[] arr) {
         int[] ans  = new int[arr.length];
