@@ -1,6 +1,4 @@
-package dbp;
-
-import util.TestCaseUtil;
+package bp;
 
 /*
 A brave Knight "A" has an array of monsters to face, and will use a combination of might and magic to defeat as many as possible. In this challenge we'd like to know if the knight is successful at defeating them all, and if not, how many monsters are defeated.
@@ -57,7 +55,9 @@ Constraints:
 
 */
 
-public class TestKnight {
+import util.TestCaseUtil;
+
+public class BraveKnight {
 
     private static int maximumEnemyKill(int[] monsters, int might, int magic) {
 
