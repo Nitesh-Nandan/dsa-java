@@ -1,5 +1,6 @@
 package kwaymerge;
 
+import util.Pair;
 import util.TestCaseUtil;
 
 import java.util.ArrayList;
@@ -8,8 +9,8 @@ import java.util.PriorityQueue;
 
 public class SmallestKNumber {
     private static int findKthSmallestNumber(List<Integer[]> lists, int k) {
-        PriorityQueue<Pair<Integer>> queue = new PriorityQueue<>(
-                (a, b) -> Integer.compare(lists.get(a.first)[a.second], lists.get(b.first)[b.second]));
+        PriorityQueue<Pair<Integer, Integer>> queue = new PriorityQueue<>(
+                (a, b) -> Integer.compare(lists.get(a.getKey())[a.getValue()], lists.get(b.getKey())[b.getValue()]));
 
         for (int i = 0; i < lists.size(); i++) {
             if (lists.get(i).length != 0) {
@@ -21,11 +22,11 @@ public class SmallestKNumber {
         int ans = 0;
 
         while (!queue.isEmpty() && visited < k) {
-            Pair<Integer> offset = queue.poll();
-            ans = lists.get(offset.first)[offset.second];
+            Pair<Integer, Integer> offset = queue.poll();
+            ans = lists.get(offset.getKey())[offset.getValue()];
 
-            if (offset.second < lists.get(offset.first).length - 1) {
-                queue.offer(new Pair<>(offset.first, offset.second + 1));
+            if (offset.getValue() < lists.get(offset.getKey()).length - 1) {
+                queue.offer(new Pair<>(offset.getKey(), offset.getValue() + 1));
             }
             visited++;
         }

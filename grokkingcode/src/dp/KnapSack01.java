@@ -6,7 +6,35 @@ import java.util.Arrays;
 import java.util.List;
 
 public class KnapSack01 {
+
     public static int findMaxKnapsackProfit(int capacity, List<Integer> weights, List<Integer> values) {
+        int len = weights.size();
+        int[][] dp = new int[len+1][capacity+1];
+
+        for(int i=1; i<=len; i++) {
+            for(int cap = weights.get(i-1); cap <= capacity; cap++) {
+                dp[i][cap] = Math.max(dp[i-1][cap], values.get(i-1) + dp[i-1][cap - weights.get(i-1)]);
+            }
+        }
+        return dp[len][capacity];
+    }
+
+    public static int findMaxKnapsackProfit3(int capacity, List<Integer> weights, List<Integer> values) {
+        return helper(weights, values, capacity, 0);
+    }
+
+    private static int helper(List<Integer> weights, List<Integer> values, int capacity, int idx) {
+        if(capacity < 0 || idx == weights.size()) {
+            return 0;
+        }
+        int ans = 0;
+        if(weights.get(idx) <= capacity) {
+            ans = values.get(idx) + helper(weights, values, capacity-weights.get(idx), idx+1);
+        }
+        ans = Math.max(ans, helper(weights, values, capacity, idx+1));
+        return ans;
+    }
+    public static int findMaxKnapsackProfit2(int capacity, List<Integer> weights, List<Integer> values) {
         int[] profit = new int[capacity + 1];
         for (int i = 0; i < weights.size(); i++) {
             for (int c = capacity; c > 0; c--) {

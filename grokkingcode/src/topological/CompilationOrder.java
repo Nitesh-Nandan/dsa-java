@@ -95,47 +95,47 @@ public class CompilationOrder {
     }
 
     public static void main(String[] args) {
-        test1();
-        test2();
-        test3();
+//        test1();
+//        test2();
+//        test3();
     }
 
-    static void test1() {
-        ArrayList<ArrayList<Character>> dependencies = new ArrayList<>();
-        dependencies.add(new ArrayList<>(List.of('B', 'A')));
-        dependencies.add(new ArrayList<>(List.of('C', 'A')));
-        dependencies.add(new ArrayList<>(List.of('D', 'B')));
-        dependencies.add(new ArrayList<>(List.of('E', 'B')));
-        dependencies.add(new ArrayList<>(List.of('E', 'D')));
-        dependencies.add(new ArrayList<>(List.of('E', 'C')));
-        dependencies.add(new ArrayList<>(List.of('F', 'D')));
-        dependencies.add(new ArrayList<>(List.of('E', 'E')));
-        dependencies.add(new ArrayList<>(List.of('F', 'C')));
-
-        System.out.println(findCompilationOrder(dependencies));
-
-    }
-
-    static void test2() {
-        ArrayList<ArrayList<Character>> dependencies = new ArrayList<>();
-        dependencies.add(new ArrayList<>(List.of('B', 'A')));
-        dependencies.add(new ArrayList<>(List.of('C', 'A')));
-        dependencies.add(new ArrayList<>(List.of('D', 'C')));
-        dependencies.add(new ArrayList<>(List.of('E', 'D')));
-        dependencies.add(new ArrayList<>(List.of('E', 'B')));
-
-        System.out.println(findCompilationOrder(dependencies));
-
-    }
-
-    static void test3() {
-        ArrayList<ArrayList<Character>> dependencies = new ArrayList<>();
-        dependencies.add(new ArrayList<>(List.of('B', 'A')));
-        dependencies.add(new ArrayList<>(List.of('A', 'B')));
-
-        System.out.println(findCompilationOrder(dependencies));
-
-    }
+//    static void test1() {
+//        ArrayList<ArrayList<Character>> dependencies = new ArrayList<>();
+//        dependencies.add(new ArrayList<>(List.of('B', 'A')));
+//        dependencies.add(new ArrayList<>(List.of('C', 'A')));
+//        dependencies.add(new ArrayList<>(List.of('D', 'B')));
+//        dependencies.add(new ArrayList<>(List.of('E', 'B')));
+//        dependencies.add(new ArrayList<>(List.of('E', 'D')));
+//        dependencies.add(new ArrayList<>(List.of('E', 'C')));
+//        dependencies.add(new ArrayList<>(List.of('F', 'D')));
+//        dependencies.add(new ArrayList<>(List.of('E', 'E')));
+//        dependencies.add(new ArrayList<>(List.of('F', 'C')));
+//
+//        System.out.println(findCompilationOrder(dependencies));
+//
+//    }
+//
+//    static void test2() {
+//        ArrayList<ArrayList<Character>> dependencies = new ArrayList<>();
+//        dependencies.add(new ArrayList<>(List.of('B', 'A')));
+//        dependencies.add(new ArrayList<>(List.of('C', 'A')));
+//        dependencies.add(new ArrayList<>(List.of('D', 'C')));
+//        dependencies.add(new ArrayList<>(List.of('E', 'D')));
+//        dependencies.add(new ArrayList<>(List.of('E', 'B')));
+//
+//        System.out.println(findCompilationOrder(dependencies));
+//
+//    }
+//
+//    static void test3() {
+//        ArrayList<ArrayList<Character>> dependencies = new ArrayList<>();
+//        dependencies.add(new ArrayList<>(List.of('B', 'A')));
+//        dependencies.add(new ArrayList<>(List.of('A', 'B')));
+//
+//        System.out.println(findCompilationOrder(dependencies));
+//
+//    }
 }
 
 

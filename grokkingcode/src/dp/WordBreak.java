@@ -42,8 +42,8 @@ class WordBreak2 {
     }
 
     private static List<String> wordBreakHelper(String str, List<String> wordDict, Map<String, List<String>> dp) {
-        if (str.isBlank()) {
-            return List.of("");
+        if (str.isEmpty()) {
+            return Arrays.asList("");
         }
 
         if (dp.containsKey(str)) {
@@ -55,7 +55,7 @@ class WordBreak2 {
             if (str.startsWith(word)) {
                 List<String> suffix = wordBreakHelper(str.substring(word.length()), wordDict, dp);
                 for (String sstr : suffix) {
-                    String space = sstr.isBlank() ? "" : " ";
+                    String space = sstr.isEmpty() ? "" : " ";
                     intermediateRes.add(word + space + sstr);
                 }
             }

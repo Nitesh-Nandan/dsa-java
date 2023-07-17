@@ -1,5 +1,6 @@
 package twoheaps;
 
+import util.Pair;
 import util.TestCaseUtil;
 
 import java.util.Collections;
@@ -33,16 +34,16 @@ public class MaximizeCapital {
 //    O(NlogN +KlogN), that is, O((n+k)logN).
     public static int maximumCapital(int cap, int k, int[] capitals, int[] profits) {
         int ans = cap;
-        PriorityQueue<Pair<Integer>> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a.first, b.first));
+        PriorityQueue<Pair<Integer, Integer>> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a.getKey(), b.getKey()));
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
         for (int i = 0; i < capitals.length; i++) {
             minHeap.offer(new Pair<>(capitals[i], i));
         }
 
         while (k > 0) {
-            while (!minHeap.isEmpty() && minHeap.peek().first <= ans) {
-                Pair<Integer> cur = minHeap.poll();
-                maxHeap.offer(profits[cur.second]);
+            while (!minHeap.isEmpty() && minHeap.peek().getKey() <= ans) {
+                Pair<Integer,Integer> cur = minHeap.poll();
+                maxHeap.offer(profits[cur.getValue()]);
             }
             if (maxHeap.isEmpty()) {
                 break;
